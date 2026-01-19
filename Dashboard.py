@@ -34,7 +34,7 @@ def load_and_clean_data():
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df = df.dropna(subset=['Date'])
     
-    #Null Values Elimination
+    # Null Values Elimination
     df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce').fillna(0)
     df['Qty'] = pd.to_numeric(df['Qty'], errors='coerce').fillna(0)
     df['Category'] = df['Category'].str.title().fillna("Unknown")
@@ -61,7 +61,7 @@ min_date, max_date = df['Date'].min().date(), df['Date'].max().date()
 start_date = st.sidebar.date_input("Start Date", min_date)
 end_date = st.sidebar.date_input("End Date", max_date)
 
-# Category/Status Filter
+# Category Filter
 selected_cat = st.sidebar.multiselect("Select Category", df['Category'].unique())
 selected_status = st.sidebar.multiselect("Order Status", df['Status'].unique())
 
