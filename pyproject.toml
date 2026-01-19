@@ -1,9 +1,0 @@
-[project]
-name = "my-streamlit-app"
-version = "0.1.0"
-description = "Sales Dashboard"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "streamlit>=1.53.0",
-]
